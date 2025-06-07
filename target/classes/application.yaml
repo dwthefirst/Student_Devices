@@ -1,0 +1,15 @@
+spring:
+   datasource:
+      username: student_devices
+      password: student_devices
+      url:  jdbc:mysql://localhost:3306/student_devices
+      
+   jpa:
+      hibernate:
+         ddl-auto: update
+      show-sql: true
+      #defer-datasource-initalization: truee
+         
+   sql:
+      init:
+         mode: never #uses data.sql to initalize tables

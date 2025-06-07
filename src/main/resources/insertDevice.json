@@ -1,0 +1,8 @@
+{
+	"assetTag" : "0005",
+	"serialNumber" : "A05",
+	"status" : "Available",
+    "deviceType" : {
+        "deviceTypeId" : 3
+    }
+}
