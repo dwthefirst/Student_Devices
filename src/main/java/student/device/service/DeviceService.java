@@ -122,7 +122,8 @@ public class DeviceService {
 		for(Device device : devices) {
 			DeviceData deviceData = new DeviceData(device);
 			
-			deviceData.getStudents().clear();
+			
+//			deviceData.getStudents().clear();
 			
 			result.add(deviceData);
 		}

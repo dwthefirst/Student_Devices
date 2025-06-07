@@ -3,6 +3,8 @@ package student.device.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,6 +33,7 @@ public class DeviceData {
 
 	private Set<StudentData> students = new HashSet<>();
 	
+	@JsonIgnore //fixes the issue of JSON repeating infinitely
 	private DeviceType deviceType;
 
 	//constructor (takes in Device dataType)
