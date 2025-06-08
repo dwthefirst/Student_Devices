@@ -34,9 +34,11 @@ public class DeviceData {
 	private Set<StudentData> students = new HashSet<>();
 	
 	//@JsonIgnore //fixes the issue of JSON repeating infinitely
-	private DeviceType deviceType;
+//	private DeviceType deviceType;
 	
-//	private DeviceTypeData deviceTypeData;
+	//use deviceTypeData to avoid the bidirectional relationship looping 
+	//between DeviceType and Device (OneToMany <> Many to One)
+	private DeviceTypeData deviceTypeData;
 
 	//constructor (takes in Device dataType)
 	public DeviceData(Device device) {
@@ -45,8 +47,13 @@ public class DeviceData {
 		serialNumber = device.getSerialNumber();
 		status = device.getStatus();
 		
-		deviceType = device.getDeviceType();
-//		deviceTypeData = new DeviceTypeData(deviceType);
+//		deviceType = device.getDeviceType();
+		
+		//prevent the circular infinite loop
+		if(device.getDeviceType() != null) { //if the deviceType exists
+			deviceTypeData = new DeviceTypeData(device.getDeviceType());
+		}
+		
 		
 		//for loop for Set<StudentData>
 		for(Student student : device.getStudents()) {

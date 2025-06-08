@@ -85,8 +85,8 @@ public class DeviceService {
 		
 		//device.setDeviceType(deviceData.getDeviceType());
 		//checking if deviceData.deviceType is null or if the deviceTypeId is null
-		if (deviceData.getDeviceType() != null && deviceData.getDeviceType().getDeviceTypeId() != null) {
-			Long typeId = deviceData.getDeviceType().getDeviceTypeId();
+		if (deviceData.getDeviceTypeData() != null && deviceData.getDeviceTypeData().getDeviceTypeId() != null) {
+			Long typeId = deviceData.getDeviceTypeData().getDeviceTypeId();
 			DeviceType existingType = deviceTypeDao.findById(typeId)
 					.orElseThrow(() -> new NoSuchElementException("DeviceType ID=" + typeId + " not found."));
 			device.setDeviceType(existingType);
