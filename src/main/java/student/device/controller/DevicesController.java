@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
-import student.device.dao.DeviceTypeDao;
 import student.device.model.DeviceData;
 import student.device.model.DeviceData.DeviceTypeData;
 import student.device.model.DeviceData.StudentData;

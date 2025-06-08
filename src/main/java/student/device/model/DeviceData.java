@@ -33,8 +33,10 @@ public class DeviceData {
 
 	private Set<StudentData> students = new HashSet<>();
 	
-	@JsonIgnore //fixes the issue of JSON repeating infinitely
+	//@JsonIgnore //fixes the issue of JSON repeating infinitely
 	private DeviceType deviceType;
+	
+//	private DeviceTypeData deviceTypeData;
 
 	//constructor (takes in Device dataType)
 	public DeviceData(Device device) {
@@ -44,6 +46,7 @@ public class DeviceData {
 		status = device.getStatus();
 		
 		deviceType = device.getDeviceType();
+//		deviceTypeData = new DeviceTypeData(deviceType);
 		
 		//for loop for Set<StudentData>
 		for(Student student : device.getStudents()) {
